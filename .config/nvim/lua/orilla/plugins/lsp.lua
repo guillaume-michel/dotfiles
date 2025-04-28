@@ -112,7 +112,7 @@ return {
         -- When you move your cursor, the highlights will be cleared (the second autocommand).
         local client = vim.lsp.get_client_by_id(event.data.client_id)
         -- START GMICHEL: Disable syntax highlighting from LSP server
-        client.server_capabilities.semanticTokensProvider = nil
+        -- client.server_capabilities.semanticTokensProvider = nil
         -- END GMICHEL
         if
           client
@@ -201,7 +201,26 @@ return {
     local servers = {
       bashls = {},
       marksman = {},
-      clangd = {},
+      clangd = {
+        cmd = {
+          "clangd",
+          "--background-index",
+          "--log=verbose",
+          "--clang-tidy",
+          "--header-insertion=never",
+          "--header-insertion-decorators",
+          "--completion-style=detailed",
+        },
+        on_attach = function()
+          vim.keymap.set(
+            "n",
+            "<leader>ch",
+            "<cmd>ClangdSwitchSourceHeader<CR>",
+            { desc = "Switch Source/Header (C/C++)" }
+          )
+        end,
+        semanticHighlighting = true,
+      },
       -- gopls = {},
       pyright = {},
       rust_analyzer = {},

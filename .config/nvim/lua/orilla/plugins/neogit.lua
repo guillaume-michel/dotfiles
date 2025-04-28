@@ -11,4 +11,7 @@ return {
       fzf_lua = true,
     },
   },
+  keys = {
+    { "<leader>G", "<cmd>Neogit<CR>", desc = "[G]it status" },
+  },
 }
