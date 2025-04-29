@@ -1,10 +1,10 @@
--- return {
---   "RRethy/base16-nvim",
---   priority = 1000, -- make sure to load this before all the other start plugins
---   config = function()
---     vim.cmd("colorscheme base16-brewer")
---   end,
--- }
+return {
+  "guillaume-michel/base16-nvim",
+  priority = 1000, -- make sure to load this before all the other start plugins
+  config = function()
+    vim.cmd("colorscheme base16-brewer")
+  end,
+}
 
 -- return {
 --   "marko-cerovac/material.nvim",
@@ -16,11 +16,96 @@
 --   end,
 -- }
 --
-return {
-  "rafamadriz/neon",
-  priority = 1000,
-  config = function()
-    vim.g.neon_style = "Dark"
-    vim.cmd("colorscheme neon")
-  end,
-}
+-- return {
+--   "rafamadriz/neon",
+--   priority = 1000,
+--   config = function()
+--     vim.g.neon_style = "Dark"
+--     vim.cmd("colorscheme neon")
+--     vim.api.nvim_set_hl(0, "CursorLine", { bg = "#222222" }) -- soft cursorline background
+--
+--     -- Fix Neogit highlights
+--     -- vim.api.nvim_set_hl(0, "NeogitHunkHeader", { bg = "#111111", fg = "#888888" })
+--     -- vim.api.nvim_set_hl(0, "NeogitHunkHeaderHighlight", { bg = "#333333", fg = "#ffffff" })
+--     -- vim.api.nvim_set_hl(0, "NeogitDiffContextHighlight", { bg = "#111111", fg = "#aaaaaa" })
+--     -- vim.api.nvim_set_hl(0, "NeogitDiffContext", { bg = "#000000", fg = "#666666" })
+--     -- vim.api.nvim_set_hl(0, "NeogitDiffAddHighlight", { bg = "#112211", fg = "#00ff00" })
+--     -- vim.api.nvim_set_hl(0, "NeogitDiffDeleteHighlight", { bg = "#220000", fg = "#ff0000" })
+--   end,
+-- }
+--
+-- return {
+--   "folke/tokyonight.nvim",
+--   lazy = false, -- load immediately
+--   priority = 1000, -- make sure it's loaded first
+--   opts = {
+--     style = "night", -- you can use "night", "storm", etc.
+--     transparent = false,
+--     on_colors = function(colors)
+--       colors.bg = "#000000" -- override background
+--       colors.bg_dark = "#000000"
+--       colors.bg_float = "#000000"
+--       colors.bg_popup = "#000000"
+--       colors.bg_sidebar = "#000000"
+--       colors.bg_statusline = "#000000"
+--     end,
+--   },
+--   config = function(_, opts)
+--     require("tokyonight").setup(opts)
+--     vim.cmd.colorscheme("tokyonight")
+--     vim.api.nvim_set_hl(0, "CursorLine", { bg = "#222222" }) -- soft cursorline background
+--   end,
+-- }
+--
+-- return {
+--   "catppuccin/nvim",
+--   name = "catppuccin",
+--   lazy = false,
+--   priority = 1000,
+--   opts = {
+--     flavour = "mocha", -- "latte", "frappe", "macchiato", "mocha"
+--     transparent_background = false,
+--     color_overrides = {
+--       mocha = {
+--         base = "#000000",
+--         mantle = "#000000",
+--         crust = "#000000",
+--       },
+--     },
+--   },
+--   config = function(_, opts)
+--     require("catppuccin").setup(opts)
+--     vim.cmd.colorscheme("catppuccin")
+--   end,
+-- }
+
+-- return {
+--   "EdenEast/nightfox.nvim",
+--   lazy = false,
+--   priority = 1000,
+--   opts = {
+--     options = {
+--       transparent = false,
+--       styles = {
+--         comments = "italic",
+--         keywords = "bold",
+--         types = "bold",
+--       },
+--       colorblind = {
+--         enable = false,
+--       },
+--     },
+--     groups = {
+--       all = {
+--         Normal = { bg = "#000000" }, -- Pure black background
+--         NormalNC = { bg = "#000000" },
+--         Pmenu = { bg = "#000000" },
+--         FloatBorder = { bg = "#000000" },
+--       },
+--     },
+--   },
+--   config = function(_, opts)
+--     require("nightfox").setup(opts)
+--     vim.cmd("colorscheme carbonfox")
+--   end,
+-- }
