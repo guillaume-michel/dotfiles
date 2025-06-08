@@ -25,7 +25,7 @@ config.color_scheme = "orilla"
 -- Fonts
 
 config.font = wezterm.font("MesloLGS Nerd Font Mono")
-config.font_size = 9
+config.font_size = 10
 
 config.automatically_reload_config = true
 config.enable_tab_bar = true
