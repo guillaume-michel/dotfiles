@@ -15,17 +15,19 @@ local base_theme_name = "Argonaut"
 -- Here we customize the base theme to always have pure black background (my preference)
 local orilla_color = wezterm.color.get_builtin_schemes()[base_theme_name]
 orilla_color.background = "#000000"
+orilla_color.foreground = "#AAAAAA"
 orilla_color.scrollbar_thumb = "#AAAAAA"
 
 config.color_schemes = {
-	["orilla"] = orilla_color,
+    ["orilla"] = orilla_color,
 }
 config.color_scheme = "orilla"
 
 -- Fonts
 
-config.font = wezterm.font("MesloLGS Nerd Font Mono")
-config.font_size = 10
+-- config.font = wezterm.font("MesloLGS Nerd Font Mono")
+config.font = wezterm.font("JetBrains Mono")
+config.font_size = 9
 
 config.automatically_reload_config = true
 config.enable_tab_bar = true
@@ -39,11 +41,17 @@ config.window_background_opacity = 1.0
 config.force_reverse_video_cursor = true
 
 config.window_padding = {
-	left = 0,
-	right = 0,
-	top = 0,
-	bottom = 0,
+    left = 0,
+    right = 0,
+    top = 0,
+    bottom = 0,
 }
 
+-- Disable ligatures
+config.harfbuzz_features = {
+   'calt=0',
+   'clig=0',
+   'liga=0',
+}
 -- and finally, return the configuration to wezterm
 return config
